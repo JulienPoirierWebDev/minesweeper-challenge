@@ -7,6 +7,8 @@ Pour cela, nous allons découvrir les transformations priorities premises
 ## Conditions
 - Tu ne travailles que dans un seul fichier, celui de ton test. Il doit être nommé avec la date du jour.
 - Tu dois essayer de choisir une transformation ayant la plus basse priorité à chaque fois.
+- Les boucles sont interdites
+- Les fonctions comme Replace, Repeat et autres sont interdites
 - Pour chaque commit, tu vas indiquer via un commentaire dans le code la transformation que tu as choisis.
 - Fais un maximum de commit
 
