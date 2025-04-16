@@ -49,20 +49,20 @@ Tu auras la possibilité d'échanger avec tes pairs et de communiquer sur tes tr
 Je répondrai aux questions techniques qui bloquent le lancement.
 
 Tarif au choix : 
-- 1 € à 60€ (TTC)
+- 1 € à 59€ (TTC)
 - 1 post linkedin dans lequel tu me taggues pour dire que tu participes au challenge avec un lien vers ce fichier
 
 ### Or - Interaction asynchrone avec moi 
 
 Tu auras la possibilité de m'interpeller (@Jonathan) sur discord pour me poser des questions. 
 
-Tarif : de 61 € à 120€ (TTC)
+Tarif : de 60 € à 119€ (TTC)
 
 ### Diamant - Feedback asynchrone sur ton travail
 
 Je surveillerai spécifiquement la réalisation de ton travail afin de te donner des feedbacks qui t'aideront à avancer encore plus vite
 
-Tarif : 120 € à 240 € (TTC)
+Tarif : 120 € à 599 € (TTC)
 
 ### Platinium - Interaction synchrone
 
