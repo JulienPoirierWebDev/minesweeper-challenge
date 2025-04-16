@@ -48,25 +48,27 @@ Tarif : 0 € HT
 Tu auras la possibilité d'échanger avec tes pairs et de communiquer sur tes travaux.
 Je répondrai aux questions techniques qui bloquent le lancement.
 
-Tarif : 50 € HT / 60 €TTC
+Tarif au choix : 
+- 1 € à 60€ (TTC)
+- 1 post linkedin dans lequel tu me taggues pour dire que tu participes au challenge avec un lien vers ce fichier
 
 ### Or - Interaction asynchrone avec moi 
 
 Tu auras la possibilité de m'interpeller (@Jonathan) sur discord pour me poser des questions. 
 
-Tarif : 100 € HT / 120 € TTC
+Tarif : de 61 € à 120€ (TTC)
 
 ### Diamant - Feedback asynchrone sur ton travail
 
 Je surveillerai spécifiquement la réalisation de ton travail afin de te donner des feedbacks qui t'aideront à avancer encore plus vite
 
-Tarif : 200 € HT / 240 € TTC
+Tarif : 120 € à 240 € (TTC)
 
 ### Platinium - Interaction synchrone
 
 On planifiera une fois par semaine une session de 45 minutes ensemble pour t'aider à réaliser le challenge. Tu pourras me poser tes questions, coder avec moi ou me raconter ta vie. Ces 45 minutes te sont consacrées
 
-Tarif : 500 € HT / 600 € TTC
+Tarif : à partir de 600 € (TTC)
 
 
 ## Les outils 
@@ -80,11 +82,8 @@ Tarif : 500 € HT / 600 € TTC
 ## Le déroulement
 
 1. Inscris toi sur [le serveur discord](https://discord.gg/bSgTv36CAs). 
-2. Si tu souhaites avoir des options supplémentaires, achète l'un des pass suivants : 
-	1. [Pass Platinium](https://buy.stripe.com/9AQeWlcIOgsn6IgcMP)
-	2. [Pass Diamant](https://buy.stripe.com/7sI9C11060tpaYw002)
-	3. [Pass Or](https://buy.stripe.com/14k15veQW5NJc2AbIJ)
-	4. [Pass Argent](https://buy.stripe.com/4gw6pP4cib836IgaEE)
+2. Si tu souhaites participer au challenge, achète le pass à prix libre ici et choisis le montant que tu souhaites mettre : 
+	- [Pass à prix libre](https://buy.stripe.com/8wM29z8sy7VRc2A5ko)
 3. Installe l'outil git gamble
 4. Choisis ton langage
 5. Tu peux commencer le challenge
