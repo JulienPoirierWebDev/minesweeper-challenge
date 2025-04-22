@@ -1,0 +1,23 @@
+{
+	"name": "minesweeper-challenge",
+	"version": "1.0.0",
+	"description": "## Objectif - Apprendre le Test Driven Development",
+	"main": "index.js",
+	"scripts": {
+		"test": "vitest"
+	},
+  "type": "module",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Johjo/minesweeper-challenge.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Johjo/minesweeper-challenge/issues"
+	},
+	"homepage": "https://github.com/Johjo/minesweeper-challenge#readme",
+	"devDependencies": {
+		"vitest": "^3.1.2"
+	}
+}
