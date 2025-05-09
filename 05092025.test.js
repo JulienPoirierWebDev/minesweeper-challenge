@@ -150,11 +150,33 @@ describe('minesweeper should work', () => {
 
 // Implémentation fictive pour éviter l’erreur
 const minesweeper = (board) => {
-	const cells = createCells(board);
+	const data = createCells(board);
 
-	const responseCells = new Array(3).fill(new Array(6).fill(0));
+	const responseCells = new Array(data.col * data.row).fill(0);
 
-	const response = createResponse(responseCells);
+	console.log(data);
+
+	data.cells.forEach((el, index) => {
+		if (el === '*') {
+			responseCells[index] = '*';
+
+			responseCells[index + data.col] =
+				responseCells[index + data.col] !== '*'
+					? 1
+					: responseCells[index + data.col];
+
+			responseCells[index + data.col + 1] =
+				responseCells[index + data.col + 1] !== '*'
+					? 1
+					: responseCells[index + data.col + 1];
+
+			responseCells[index + 1] =
+				responseCells[index + 1] !== '*' ? 1 : responseCells[index + 1];
+		}
+
+		return;
+	});
+	const response = createResponse(responseCells, data.col);
 
 	return response;
 };
@@ -162,14 +184,28 @@ const minesweeper = (board) => {
 const createCells = (board) => {
 	const arr = board.split('\n');
 
-	const cells = arr.map((element) => {
-		return element.split('');
-	});
-	return cells;
+	const row = arr.length;
+	const col = arr[0].length;
+
+	const cells = arr
+		.map((element) => {
+			return element.split('');
+		})
+		.reduce((prev, curr) => {
+			return [...prev, ...curr];
+		}, []);
+
+	return { cells, row, col };
 };
 
-const createResponse = (cells) => {
-	const arr = cells.map((el) => el.join(''));
-
-	return arr.join('\n');
+const createResponse = (cells, col) => {
+	const string = cells.join('');
+	let result = '';
+	for (let i = 0; i < string.length; i += 1) {
+		if (i % col === 0 && i !== 0) {
+			result += '\n';
+		}
+		result += string[i];
+	}
+	return result;
 };
