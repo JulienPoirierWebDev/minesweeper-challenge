@@ -77,6 +77,11 @@ Deux mines côte a côte doivent generer des alertes de niveau 2
 01**10
 012210
 
+
+---------------------------------------------------------------------------
+
+Scenario 4 : 
+
 Trois mines côte a côte doivent generer des alertes de niveau 3
 
 ......
@@ -130,6 +135,11 @@ describe('minesweeper should work', () => {
 	test('Deux mines côte a côte doivent generer des alertes de niveau 2', () => {
 		const solution = minesweeper('......\n..**..\n......');
 		expect(solution).toEqual('012210\n01**10\n012210');
+	});
+
+	test('Trois mines côte a côte doivent generer des alertes de niveau 3', () => {
+		const solution = minesweeper('......\n.***..\n......');
+		expect(solution).toEqual('123210\n1***10\n123210');
 	});
 
 	/*test('final boss', () => {
