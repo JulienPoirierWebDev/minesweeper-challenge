@@ -127,6 +127,11 @@ describe('minesweeper should work', () => {
 		expect(solution).toEqual('001110\n001*10\n001110');
 	});
 
+	test('Deux mines côte a côte doivent generer des alertes de niveau 2', () => {
+		const solution = minesweeper('......\n..**..\n......');
+		expect(solution).toEqual('012210\n01**10\n012210');
+	});
+
 	/*test('final boss', () => {
 		const solution = minesweeper('.*.**.\n....*.\n..*...');
 		expect(solution).toEqual('1*2**2\n1234*2\n01*211');
@@ -147,50 +152,32 @@ const minesweeper = (board) => {
 			responseCells[index] = '*';
 
 			// A droite
-			responseCells[index + 1] =
-				responseCells[index + 1] !== '*' ? 1 : responseCells[index + 1];
+
+			handleCellUdate(responseCells, index + 1);
 
 			// a gauche
-			responseCells[index - 1] =
-				responseCells[index - 1] !== '*' ? 1 : responseCells[index - 1];
+			handleCellUdate(responseCells, index - 1);
 
 			// en bas
-			responseCells[index + data.col] =
-				responseCells[index + data.col] !== '*'
-					? 1
-					: responseCells[index + data.col];
+			handleCellUdate(responseCells, index + data.col);
 
 			// en haut
-			responseCells[index - data.col] =
-				responseCells[index - data.col] !== '*'
-					? 1
-					: responseCells[index - data.col];
+			handleCellUdate(responseCells, index - data.col);
+
 			// diagonale basse droite
-			responseCells[index + data.col + 1] =
-				responseCells[index + data.col + 1] !== '*'
-					? 1
-					: responseCells[index + data.col + 1];
+
+			handleCellUdate(responseCells, index + data.col + 1);
 
 			if (index % data.col !== 0) {
 				// diagonale basse gauche
-				responseCells[index + data.col - 1] =
-					responseCells[index + data.col - 1] !== '*'
-						? 1
-						: responseCells[index + data.col - 1];
+				handleCellUdate(responseCells, index + data.col - 1);
 			}
 
 			// diagonale haute gauche
-			responseCells[index - data.col - 1] =
-				responseCells[index - data.col - 1] !== '*'
-					? 1
-					: responseCells[index - data.col - 1];
+			handleCellUdate(responseCells, index - data.col - 1);
 
 			// diagonale haute droite
-
-			responseCells[index - data.col + 1] =
-				responseCells[index - data.col + 1] !== '*'
-					? 1
-					: responseCells[index - data.col + 1];
+			handleCellUdate(responseCells, index - data.col + 1);
 		}
 
 		return;
@@ -227,4 +214,12 @@ const createResponse = (cells, col) => {
 		result += string[i];
 	}
 	return result;
+};
+
+const handleCellUdate = (responseCells, target) => {
+	if (responseCells[target] === '*') {
+		return;
+	}
+
+	responseCells[target]++;
 };
