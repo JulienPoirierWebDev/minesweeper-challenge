@@ -155,11 +155,10 @@ describe('minesweeper should work', () => {
 		expect(solution).toEqual('112110\n1*2*10\n112110');
 	});
 
-	/*test('final boss', () => {
+	test('final boss', () => {
 		const solution = minesweeper('.*.**.\n....*.\n..*...');
 		expect(solution).toEqual('1*2**2\n1234*2\n01*211');
 	});
-	*/
 });
 
 // Implémentation fictive pour éviter l’erreur
@@ -194,13 +193,12 @@ const minesweeper = (board) => {
 			if (index % data.col !== 0) {
 				// diagonale basse gauche
 				handleCellUdate(responseCells, index + data.col - 1);
+				// diagonale haute gauche
+				handleCellUdate(responseCells, index - data.col - 1);
+
+				// diagonale haute droite
+				handleCellUdate(responseCells, index - data.col + 1);
 			}
-
-			// diagonale haute gauche
-			handleCellUdate(responseCells, index - data.col - 1);
-
-			// diagonale haute droite
-			handleCellUdate(responseCells, index - data.col + 1);
 		}
 
 		return;
@@ -240,7 +238,7 @@ const createResponse = (cells, col) => {
 };
 
 const handleCellUdate = (responseCells, target) => {
-	if (responseCells[target] === '*') {
+	if (responseCells[target] === '*' || responseCells.length < target) {
 		return;
 	}
 
