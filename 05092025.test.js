@@ -92,6 +92,10 @@ Trois mines côte a côte doivent generer des alertes de niveau 3
 1***10
 123210
 
+---------------------------------------------------------------------------
+
+Scenario 5 : 
+
 Deux mines espacées d'une case doivent générer une alerte de niveau 2 entre elles.
 
 ......
@@ -101,6 +105,10 @@ Deux mines espacées d'une case doivent générer une alerte de niveau 2 entre e
 112110
 1*2*10
 112110
+
+---------------------------------------------------------------------------
+
+Scenario 6 : 
 
 Boss final
 
@@ -140,6 +148,11 @@ describe('minesweeper should work', () => {
 	test('Trois mines côte a côte doivent generer des alertes de niveau 3', () => {
 		const solution = minesweeper('......\n.***..\n......');
 		expect(solution).toEqual('123210\n1***10\n123210');
+	});
+
+	test("Deux mines espacées d'une case doivent générer une alerte de niveau 2 entre elles", () => {
+		const solution = minesweeper('......\n.*.*..\n......');
+		expect(solution).toEqual('112110\n1*2*10\n112110');
 	});
 
 	/*test('final boss', () => {
