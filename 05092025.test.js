@@ -117,28 +117,14 @@ describe('minesweeper should work', () => {
 		expect(solution).toEqual('000000\n000000\n000000');
 	});
 
-	/*
-    
-        
-
-        *.....
-        ......
-        ......
-
-        *10000
-        110000
-        000000
-
-        Analyse : 
-
-        Pour une mine en 0,0 (origine en haut a gauche)
-
-        Il faut ajouter 1 aux cases 0,1 ; 1,0 et 1,1
-    */
-
 	test("Une mine au premier emplacement doit générer une alerte niveau 1 a sa droite et en bas, ainsi qu'a sa diagonale", () => {
 		const solution = minesweeper('*.....\n......\n......');
 		expect(solution).toEqual('*10000\n110000\n000000');
+	});
+
+	test("Une mine au milieu du plateau doit génerer une alerte de niveau 1 autour d'elle diagonales incluses", () => {
+		const solution = minesweeper('......\n...*..\n......');
+		expect(solution).toEqual('001110\n001*10\n001110');
 	});
 
 	/*test('final boss', () => {
@@ -160,18 +146,51 @@ const minesweeper = (board) => {
 		if (el === '*') {
 			responseCells[index] = '*';
 
+			// A droite
+			responseCells[index + 1] =
+				responseCells[index + 1] !== '*' ? 1 : responseCells[index + 1];
+
+			// a gauche
+			responseCells[index - 1] =
+				responseCells[index - 1] !== '*' ? 1 : responseCells[index - 1];
+
+			// en bas
 			responseCells[index + data.col] =
 				responseCells[index + data.col] !== '*'
 					? 1
 					: responseCells[index + data.col];
 
+			// en haut
+			responseCells[index - data.col] =
+				responseCells[index - data.col] !== '*'
+					? 1
+					: responseCells[index - data.col];
+			// diagonale basse droite
 			responseCells[index + data.col + 1] =
 				responseCells[index + data.col + 1] !== '*'
 					? 1
 					: responseCells[index + data.col + 1];
 
-			responseCells[index + 1] =
-				responseCells[index + 1] !== '*' ? 1 : responseCells[index + 1];
+			if (index % data.col !== 0) {
+				// diagonale basse gauche
+				responseCells[index + data.col - 1] =
+					responseCells[index + data.col - 1] !== '*'
+						? 1
+						: responseCells[index + data.col - 1];
+			}
+
+			// diagonale haute gauche
+			responseCells[index - data.col - 1] =
+				responseCells[index - data.col - 1] !== '*'
+					? 1
+					: responseCells[index - data.col - 1];
+
+			// diagonale haute droite
+
+			responseCells[index - data.col + 1] =
+				responseCells[index - data.col + 1] !== '*'
+					? 1
+					: responseCells[index - data.col + 1];
 		}
 
 		return;
